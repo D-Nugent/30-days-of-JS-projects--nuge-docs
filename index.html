@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NugeDocs</title>
+  <link rel="stylesheet" href="./styles/textFormatting.css">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <header class="tools">
+    <h1 class="logo">Nuge<span class="logo__offset">Docs</span></h1>
+    <button class="tool" data-key="80">Save as PDF</button>
+    <input class="tool__docname" type="text" name="documentName" id="documentName" placeholder="Document Name...">
+    <section class="styling">
+      <div class="justify">
+        <button class="styling__tool --left" data-key="76">:..</button>
+        <button class="styling__tool --center" data-key="67">.:.</button>
+        <button class="styling__tool --right" data-key="82">..:</button>
+      </div>
+      <div class="font">
+        <button class="styling__tool --bold" data-key="66">B</button>
+        <button class="styling__tool --italicize" data-key="73">I</button>
+        <button class="styling__tool --underline" data-key="85">U</button>
+        <select class="styling__tool --font" name="fontSelect" id="fontSelect">
+          <option value="monospace">Monospace</option>
+          <option value="serif">Serif</option>
+          <option value="sans-serif">Sans-Serif</option>
+          <option value="cursive">Cursive</option>
+        </select>
+        <input class="styling__color" type="color" name="colorSelect" id="colorSelect">
+      </div>
+    </section>
+    <section class="lookup-tools">
+      <button class="lookup__tool --def" data-key="68">Definition</button>
+      <button class="lookup__tool --syn" data-key="69">Synonyms</button>
+      <button class="lookup__tool --ex"  data-key="83">ExamplesOf</button>
+      <button class="lookup__tool --rhy"  data-key="89">Rhymes</button>
+    </section>
+  </header>
+  <main class="editor">
+    <div 
+      class="editor__page"
+      name="editor-doc" 
+      id="editor-doc"
+      autocomplete="off"
+      autofocus=true
+      placeholder="Start your NugentDoc here..."
+      spellcheck="false"
+      contenteditable="true"
+    >
+    </div>
+    <section class="lookup">
+      <div class="lookup__section --definition">
+        <h2 class="lookup__heading">Definition</h2>
+        <ul class="lookup__value --definition">No data to show</ul>
+      </div>
+      <div class="lookup__section --synonyms">
+        <h2 class="lookup__heading">Synonyms</h2>
+        <ul class="lookup__value --synonyms">No data to show</ul>
+      </div>
+      <div class="lookup__section --examples">
+        <h2 class="lookup__heading">Examples Of</h2>
+        <ul class="lookup__value --examples">No data to show</ul>
+      </div>
+      <div class="lookup__section --rhymes">
+        <h2 class="lookup__heading">Rhyming Words</h2>
+        <ul class="lookup__value --rhymes">No data to show</ul>
+      </div>
+    </section>
+    <!-- <textarea 
+      class="editor__page"
+      name="editor-doc" 
+      id="editor-doc"
+      autocomplete="off"
+      autofocus=true
+      placeholder="Start your NugentDoc here..."
+      spellcheck="false"
+    >
+    This is an example of <span class="emph-bold">some text</span>
+    </textarea> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./scripts/apiKey.js"></script>
+    <script src="./scripts/apiDetails.js"></script>
+    <script src="./scripts/lookup.js"></script>
+    <script src="./scripts/script.js"></script>
+  </main>
+</body>
+</html>

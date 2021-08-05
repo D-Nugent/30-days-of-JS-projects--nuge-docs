@@ -1,0 +1,32 @@
+.emph-left{
+  display: block;
+  text-align: left;
+}
+
+.emph-center{
+  display: block;
+  text-align: center;
+}
+
+.emph-right{
+  display: block;
+  text-align: right;
+}
+
+.emph-bold{
+  font-weight: 800;
+}
+
+.emph-italicize{
+  font-style: italic;
+}
+
+.emph-underline{
+  text-decoration: underline;
+}
+
+.emph-reset *{
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal !important;
+}

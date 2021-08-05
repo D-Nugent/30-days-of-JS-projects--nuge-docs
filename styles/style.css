@@ -1,0 +1,294 @@
+/* HTML Reset */
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: gainsboro;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/* ------ */
+/* Root Variables */
+
+:root{
+  --toolShadow: 2px 2px 4px rgba(0,0,0,0.25);
+  --docTextColor: black;
+}
+/* ------ */
+/* Toolbar Styling */
+.tools {
+  background-color: whitesmoke;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 2%;
+  align-items: center;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.logo__offset{
+  color: lightblue;
+  text-shadow: 1px 1px 1px black;
+}
+
+.tool {
+  border: none;
+  box-shadow: var(--toolShadow);
+  position: relative;
+}
+
+.tool__docname{
+  border: none;
+  box-shadow: var(--toolShadow);
+  outline-width: 4px;
+  outline-color: lightblue;
+}
+
+.tool:hover{
+  cursor: pointer;
+  background-color:lightblue;
+}
+
+.lookup-tools{
+  display: flex;
+  justify-content: space-between;
+  width: 24vw;
+}
+
+.lookup__tool {
+  border: none;
+  box-shadow: var(--toolShadow);
+  position: relative;
+}
+
+.lookup__tool:hover {
+  cursor: pointer;
+  background-color:lightblue;
+}
+
+.styling{
+  display: flex;
+}
+
+.styling__tool {
+  border: none;
+  box-shadow: var(--toolShadow);
+  position: relative;
+}
+
+.styling__tool:hover {
+  cursor: pointer;
+  background-color:lightblue;
+}
+
+.styling__tool.--bold{
+  font-weight: 600;
+}
+
+.styling__tool.--italicize{
+  font-style: italic;
+}
+
+.styling__tool.--underline{
+  text-decoration: underline;
+}
+
+.styling > * {
+  display: flex;
+  justify-content: space-between;
+}
+
+.justify{
+  width: 7vw;
+  font-size: 2rem;
+  margin: 0 4%;
+}
+
+.font{
+  width: 18vw;
+}
+
+/* Tool keyboard shortcuts */
+/* Print */
+.tool:hover::after{
+  content: "Ctrl + p";
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--toolShadow);
+  padding: 3% 6%;
+  position: absolute;
+  bottom: -75%;
+  right: -90%;
+  width: 6vw;
+  z-index: 1;
+  background-color: whitesmoke;
+}
+/* Justify left, center & right */
+.styling__tool:hover::after{
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--toolShadow);
+  padding: 3% 6%;
+  position: absolute;
+  bottom: -75%;
+  right: -300%;
+  width: 5vw;
+  z-index: 1;
+  background-color: whitesmoke;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.styling__tool.--left:hover::after{content: "Ctrl + l";}
+.styling__tool.--center:hover::after{content: "Ctrl + c";}
+.styling__tool.--right:hover::after{content: "Ctrl + r";}
+.styling__tool.--bold:hover::after{content: "Ctrl + b";}
+.styling__tool.--italicize:hover::after{content: "Ctrl + i";}
+.styling__tool.--underline:hover::after{content: "Ctrl + u";}
+
+/* Lookup */
+.lookup__tool:hover::after{
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--toolShadow);
+  padding: 3% 6%;
+  position: absolute;
+  bottom: -100%;
+  right: -100%;
+  width: 6vw;
+  z-index: 1;
+  background-color: whitesmoke;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.lookup__tool.--def:hover::after{content: "Ctrl + d";}
+.lookup__tool.--syn:hover::after{content: "Ctrl + s";}
+.lookup__tool.--ex:hover::after{content: "Ctrl + e";}
+.lookup__tool.--rhy:hover::after{
+  content: "Ctrl + r";
+  right: 125%;
+}
+
+
+/* Editor Styling */
+.editor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.editor__page{
+  width: 60vw;
+  height: 84.85vw;
+  resize: none;
+  margin: 6vh 6vw;
+  padding: 7.25vw;
+  outline: none;
+  border: none;
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  flex: .8;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--docTextColor);
+}
+
+.editor__page.--serif{
+  font-family:'Times New Roman', Times, serif;
+}
+
+.editor__page.--serif *{
+  font-family:'Times New Roman', Times, serif;
+}
+
+.editor__page.--sans-serif{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.editor__page.--sans-serif *{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.editor__page.--cursive{
+  font-family: cursive
+}
+
+.editor__page.--cursive *{
+  font-family: cursive
+}
+
+.editor__page * {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* lookup window */
+
+.lookup{
+  align-self: flex-start;
+  background-color: whitesmoke;
+  position: sticky;
+  top: 11vh;
+  max-height: 80vh;
+  width: 20vw;
+  margin-top: 6vh;
+  padding: 2% 2% 1% 2%;
+  transition: flex .6s ease-in, transform .4s linear, margin .4s linear;
+  flex: 0;
+  transform: translateX(305%);
+  margin-left: -5%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.lookup.--active{
+  margin-left: 0;
+  flex: .3;
+  transform: translateX(0);
+  overflow: auto
+}
+
+.lookup__section {
+  display: none;
+}
+
+.lookup__section.--active{
+  display: flex;
+  flex-direction: column;
+}
+
+.lookup__value {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.def {
+  margin-bottom: 4%;
+}
+
+.def__title{
+  margin-top: 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid gainsboro;
+}
+
+.def__part {
+  font-weight: 600;
+}
+
+.def__text{
+  display: block;
+}
+
+.def__text::first-letter {
+  text-transform: uppercase;
+}
